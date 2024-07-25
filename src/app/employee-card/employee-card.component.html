@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="image-holder">
+    <img [src]="employee.avatar" />
+  </div>
+  <div class="details">
+    <h4 class="name">{{ employee.firstName }} {{ employee.lastName }}</h4>
+    <p class="position">{{ employee.position }}</p>
+    <span class="tags">{{ employee.department }}</span>
+    @if(employee.married) {
+    <span class="tags">Married</span>
+    } @if(employee.isVip) {
+    <span class="vip">VIP</span>
+    }
+  </div>
+</div>

@@ -1,0 +1,53 @@
+.card {
+    display:flex;
+    border: #eee 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    flex-basis:50%;
+    width:calc(37.25vw - 60px);
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    .image-holder {
+        display: flex;
+        justify-content: center;
+        flex:25%;
+        img {
+            width:128px;
+            height:128px;
+            border-radius: 10px;
+        }
+    }
+    .details {
+        padding:10px;
+        .name {
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+        flex:75%;
+        .position {
+            color: #CCC;
+            margin-top:5px;
+            margin-bottom:10px;
+            font-size:11px;
+        }
+        .tags {
+            border-radius: 12px;
+            background-color: #bfe6ff;
+            color: blue;
+            padding:5px 8px;
+            font-size: 10px;
+            margin-right: 5px
+        }
+        .vip {
+            border-radius: 12px;
+            background-color: #fadbd8;
+            color: #8a2d24;
+            padding:5px 8px;
+            font-size: 10px;
+            margin-right: 5px
+        }
+    }
+}
+
+
+

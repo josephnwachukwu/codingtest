@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="employees-container">
+    <div class="header">
+      <div class="header-item">
+        <h4 class="title">Employees</h4>
+      </div>
+      <div class="header-item has-items-right">
+        <select
+          class="employee-select"
+          [ngModel]="currentDepartment()"
+          (ngModelChange)="onDepartmentChanged($event)"
+        >
+          <option [value]="'All'">All Departments</option>
+          @for(department of employeeService.departmentSignal(); track $index) {
+          <option [value]="department">{{ department }}</option>
+          }
+        </select>
+      </div>
+    </div>
+    <div class="content">
+      @for(employee of visibleEmployees() | slice : start : end ; track $index)
+      {
+      <cde-employee-card [employee]="employee"></cde-employee-card>
+      }
+    </div>
+    <div class="footer">
+      <span class="prev-page"
+        ><img
+          (click)="prevPage()"
+          src="../../assets/arrow-thin-left.svg"
+          alt="left"
+      /></span>
+      <ul class="pages">
+        @for(page of pages(); track $index) {
+        <li
+          class="page"
+          (click)="updatePage(page)"
+          [ngClass]="{ active: page + 1 === activePage }"
+        >
+          {{ page + 1 }}
+        </li>
+        }
+      </ul>
+      <span class="next-page"
+        ><img
+          (click)="this.nextPage()"
+          src="../../assets/arrow-thin-right.svg"
+          alt="right"
+      /></span>
+    </div>
+  </div>
+</div>
